@@ -1,0 +1,51 @@
+<p>addcart works!</p>
+<div>
+    <h3>orderno={{orderno}}</h3>
+    <ul>
+        <li *ngFor="let coffee of type">{{ coffee }}</li>
+      </ul>
+      <input type="text" [(ngModel)]="coffeetype" placeholder="enter type"/>
+      <input type="submit" (click)="checkavail()"value="check for price and offers"/>
+
+      <div *ngIf="coffeetype.toLowerCase() == 'cappuccino'">
+        <h2>Cappuccino!!</h2>
+        <h4>base price : $4.0</h4>
+    
+        <h4>size options</h4>
+        <ol>
+            <li>small:$4.0</li>
+            <li>medium:$4.5</li>
+            <li>large:$5.0</li>
+        </ol>
+        <h3>COMBO OFFER</h3>
+        <h4>Cappuccino + Pastry: $6.50 (save $1)</h4>
+      </div>
+      <div *ngIf="coffeetype.toLowerCase() == 'latte'">
+        <h2>Latte!!</h2>
+        <h4>Base Price: $4.50</h4>
+    
+        <h4>size options</h4>
+        <ol>
+            <li>small:$4.0</li>
+            <li>medium:$4.5</li>
+            <li>large:$5.0</li>
+        </ol>
+        <h3>DEAL OF THE DAY</h3>
+        <h4>Happy Hour: Lattes for $3 from 3 PM to 5 PM!</h4>
+      </div>
+      <div *ngIf="coffeetype.toLowerCase() == 'espresso'">
+        <h2>Espresso!!</h2>
+       
+    
+        <h4>base price</h4>
+        <ol>
+            <li>single shot:$2.50</li>
+            <li>double shot:$3.50</li>
+           
+        </ol>
+        <h3>FLAVOUR ENHANCEMENTS</h3>
+        <h4>Vanilla, Caramel, Hazelnut: +$0.50 each</h4>
+      
+        <h3>Earn 1 point for every espresso purchased!</h3>
+      </div>
+</div>
