@@ -30,4 +30,19 @@ export class DataService {
     const url:string="http://localhost:5000/product/api1.0/productsinfo";
     return this.http.get(url);
    }
+   addProduct(product:Product):Observable<any>{
+    const url:string="http://localhost:5000/product/api1.0/addprod";
+    return this.http.post(url,product);
+   }
+   deleteprod(productId:number):Observable<any>{
+    const url:string="http://localhost:5000/product/api1.0/delete/"+productId;
+    return this.http.delete(url);
+
+   }
+   updateprod(product:Product):Observable<any>{
+    const url:string="http://localhost:5000/product/api1.0/addprod";
+    return this.http.put(url,product);
+
+   }
+
 }
