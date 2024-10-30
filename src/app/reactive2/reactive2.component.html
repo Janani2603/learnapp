@@ -1,10 +1,10 @@
 
-<div class="container">
+<div class="container mt-4">
     <form (ngSubmit)="onSubmit()">
-        <div class="form-group">
-        <label for="productId">productId: </label>
+        <div class="form-group mb-3 col-6">
+        <label for="productId">Product-Id: </label>
         <input type="text"
-        class="form-control"
+        class="form-control placeholder col-12 placeholder-lg bg-Info"
         id="productId"
         name="productId"
         minlength="4"
@@ -18,47 +18,64 @@
             </div>
             
         </div>
-           <div class="form-group">
-        <label for="description">description: </label>
+           <div class="form-group mb-3 col-6">
+        <label for="description">Description: </label>
         <input type="text"
-        class="form-control"
+        class="form-control placeholder col-12 placeholder-lg bg-Info"
         id="description"
         [(ngModel)]="product.description"
         name="description"
         formControlName="description"/>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-3 col-6">
             <label for="">Brand: </label>
             <input type="text" 
-            class="form-control"
+            class="form-control placeholder col-12 placeholder-lg bg-Info"
             id="name"
             [(ngModel)]="product.brand"
             name="brand"
             />
 
         </div>
-       <div class="form-group">
+       <div class="form-group mb-3 col-6">
         <label for="">Quantity: </label>
         <input type="text" 
-        class="form-control"
+        class="form-control placeholder col-12 placeholder-lg bg-Info"
         id="qty"
         [(ngModel)]="product.qty"
         name="qty"/>
     </div>
-    <div class="form-group">
-        <label for="">Price: </label>
+    <div class="form-group mb-2 col-6 position-relative">
+        <label for="" >Price: </label>
+       
         <input type="text" 
-        class="form-control"
+        class="form-control placeholder col-12 placeholder-lg bg-Info"
+        aria-label="Amount (to the nearest dollar)"
+        
         id="price"
         [(ngModel)]="product.price"
         name="price"/>
+        <!-- <span class="input-group-text">.00</span> -->
     </div>
-    <button type="submit">Submit</button>
+    <!-- <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+      </div> -->
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="submit" class="btn btn-success">Submit</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+    </div>
+   
         <!-- <label for="">price: </label>
         <input type="text" formControlName="price"/>
         <button type="submit" [disabled]="!productForm.valid">Submit</button> -->
         
-    
+        <!-- <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary">Left</button>
+            <button type="button" class="btn btn-primary">Middle</button>
+            <button type="button" class="btn btn-primary">Right</button>
+          </div> -->
     </form>
     <div *ngIf="submittedProduct" class="mt-4">
         <h4>Submitted Product Details</h4>

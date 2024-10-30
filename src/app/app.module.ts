@@ -10,6 +10,8 @@ import { ReactiveComponent } from './reactive/reactive.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormbuilderComponent } from './formbuilder/formbuilder.component';
 import { Reactive2Component } from './reactive2/reactive2.component';
+import { TokenComponent } from './token/token.component';
+
 
 
 
@@ -21,7 +23,9 @@ import { Reactive2Component } from './reactive2/reactive2.component';
     HttpComponent,
     ReactiveComponent,
     FormbuilderComponent,
-    Reactive2Component
+    Reactive2Component,
+    TokenComponent,
+   
   ],
   imports: [
     BrowserModule,

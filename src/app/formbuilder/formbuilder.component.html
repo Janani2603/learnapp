@@ -1,4 +1,5 @@
-<p>formbuilder works!</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha384-qgD8k89i4Zlm8b22aL5FsWNGvBoD5P3AdwB3wTrC3pk5GnRRII6J7eJ+jDbYcKhe" crossorigin="anonymous">
+<!-- <p>formbuilder works!</p>
 <div class="container">
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
         <label for="">productId<input type="text" formControlName="productId"/></label>
@@ -18,5 +19,51 @@
         </div>
         <button type="submit" [disabled]="!productForm.valid">Submit</button>
 
+    </form>
+</div> -->
+
+<p class="text-center">Form Builder Works!</p>
+<div class="container">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="bg-light p-4 rounded">
+        <div class="mb-3">
+            <label for="productId" class="form-label">Product ID</label>
+            <input type="text" formControlName="productId" class="form-control" id="productId" placeholder="Enter Product ID"/>
+        </div>
+        
+        <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <input type="text" formControlName="brand" class="form-control" id="brand" placeholder="Enter Brand"/>
+        </div>
+
+        <div formGroupName="description" class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="text" formControlName="age" class="form-control" id="age" placeholder="Enter Age"/>
+            
+            <label for="seasons" class="form-label">Seasons</label>
+            <input type="text" formControlName="seasons" class="form-control" id="seasons" placeholder="Enter Seasons"/>
+        </div>
+
+        <div class="mb-3">
+            <label for="qty" class="form-label">Quantity</label>
+            <input type="text" formControlName="qty" class="form-control" id="qty" placeholder="Enter Quantity"/>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" formControlName="price" class="form-control" id="price" placeholder="Enter Price"/>
+        </div>
+
+        <div formArrayName="suppliers" class="mb-3">
+            <label class="form-label">Suppliers </label><br>
+            <button type="button" class="btn btn-secondary mb-2 btn btn-lg  btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="new supplierss added!!!" (click)="addNewSupplier()" >Add New Supplier</button>
+            <!-- <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="Popover title" >Click to toggle popover</button> -->
+            <div *ngFor="let supplier of suppliers.controls; let i = index">
+                <div class="input-group mb-2">
+                    <input type="text" [formControlName]="i" class="form-control" placeholder="Supplier Name"/>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!productForm.valid">Submit</button>
     </form>
 </div>
